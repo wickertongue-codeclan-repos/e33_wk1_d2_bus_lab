@@ -28,11 +28,15 @@ public class Bus {
             this.passengers.add(person);
         }
     }
+    
+//    Should use the below rather than the uncommented function
+//    public void removePassenger(Person person) {
+//        this.passengers.remove(person);
+//    }
 
     public void removePassenger() {
         this.passengers.remove(0);
     }
-
 
     public void pickUpPassenger(BusStop busStop) {
         Person person = busStop.removeFromQueue();
