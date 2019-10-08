@@ -17,4 +17,9 @@ public class BusStopTest {
         assertEquals("Portobello High Street", busStop.getName());
     }
 
+    @Test
+    public void queueStartsEmpty(){
+        assertEquals(0, busStop.queueCount());
+    }
+
 }
