@@ -11,6 +11,7 @@ public class BusTest {
     @Before
     public void before(){
         bus = new Bus("Wallyford", 6);
+        person = new Person();
     }
 
     @Test
@@ -32,5 +33,17 @@ public class BusTest {
     public void canAddPassenger(){
         bus.addPassenger(person);
         assertEquals(1, bus.passengerCount());
+    }
+
+    @Test
+    public void cannotAddPassengerWhenOverCapacity(){
+        bus.addPassenger(person);
+        bus.addPassenger(person);
+        bus.addPassenger(person);
+        bus.addPassenger(person);
+        bus.addPassenger(person);
+        bus.addPassenger(person);
+        bus.addPassenger(person);
+        assertEquals(6, bus.passengerCount());
     }
 }
